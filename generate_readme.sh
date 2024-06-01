@@ -38,6 +38,7 @@ This section holds structured data about Cindor's character sheet, experiences, 
         - Read the file listed under \`character_sheet\` in \`manifest.yaml\` to get the current character stats and details.
     c. **Update Technical Files**:
         - Read the files listed under \`experiences\`, \`locations\`, \`people\`, and \`missions\` in \`manifest.yaml\` to understand the current state of the adventure.
+        - Refer to the \`manifest.yaml\` file for schema hints and formatting guidelines.
 
     Thank you!
     \`\`\`
@@ -60,36 +61,19 @@ This section holds structured data about Cindor's character sheet, experiences, 
        - **Character Information:** [Provide updated character details]
     
     c. **Technical Files Update**:
-       - **Experiences:** [Provide new experiences]
-       - **Locations:** [Provide new locations]
-       - **People:** [Provide new people met]
-       - **Missions:** [Provide updates on missions]
+       - **Experiences:** [Provide new experiences in the format: { "session_id": X, "date": "YYYY-MM-DD", "title": "Title", "description": "Description", "events": ["Event1", "Event2"] }]
+       - **Locations:** [Provide new locations in the format: { "name": "Location Name", "description": "Description" }]
+       - **People:** [Provide new people met in the format: { "name": "Person Name", "description": "Description" }]
+       - **Missions:** [Provide updates on missions in the format: { "short_term": [{ "mission": "Mission Name", "status": "Status", "objectives": ["Objective1", "Objective2"] }], "long_term": [{ "mission": "Mission Name", "status": "Status", "objectives": ["Objective1", "Objective2"] }] }]
+       - Refer to the \`manifest.yaml\` file for schema hints and formatting guidelines.
     
     Thank you!
     \`\`\`
 
 ## Adventure Narrative
-The narrative of the campaign, titled "The Lost Forge of the Spellsmith," is detailed below. This section captures the essence of the adventure, its key scenes, and the characters involved.
+The narrative of the campaign, titled "The Lost Forge of the Spellsmith," is detailed below. This adventure involves the quest to find an ancient forge of immense power, hidden within the ruins of an ancient city and guarded by a fanatical cult. The adventurers must gather knowledge and allies, face political tensions, navigate treacherous terrain, and overcome formidable foes to uncover the forge’s secrets.
 
-### Act 1: Rumors and Preparation
-
-*Insert details of Act 1 here...*
-
-### Act 2: Journey to the Ruins
-
-*Insert details of Act 2 here...*
-
-### Act 3: Infiltration and Discovery
-
-*Insert details of Act 3 here...*
-
-### Act 4: The Forge and the Showdown
-
-*Insert details of Act 4 here...*
-
-### Act 5: Legacy and Future Adventures
-
-*Insert details of Act 5 here...*
+For the full adventure details, see the [The Lost Forge of the Spellsmith README](./sample-adventures/the-lost-forge-of-the-spellsmith/README.md).
 
 EOL
 

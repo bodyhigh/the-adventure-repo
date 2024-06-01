@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 # Create main directories
-mkdir -p $1/{journal,technical,images,persona,scripts}
+mkdir -p $1/{journal,technical,images,persona,scripts,sample-adventures/the-lost-forge-of-the-spellsmith}
 
 # Create initial technical files with clean setup
 cat <<EOL > $1/technical/character_sheet.yaml
@@ -150,7 +150,7 @@ character:
     - name: Action Surge
       description: "On your turn, you can take one additional action. This can be used once per short or long rest."
     - name: Guild Membership
-      description: "As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings."
+      description: "As an established and respected member of aguild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for your funeral if needed. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings."
 EOL
 
 cat <<EOL > $1/technical/experiences.yaml
@@ -183,17 +183,8 @@ tasks:
   - Incorporate session suggestions and feedback
 EOL
 
-# Create manifest file
-cat <<EOL > $1/manifest.yaml
-manifest:
-  journal_directory: "journal"
-  character_sheet: "technical/character_sheet.yaml"
-  experiences: "technical/experiences.yaml"
-  locations: "technical/locations.yaml"
-  people: "technical/people.yaml"
-  missions: "technical/missions.yaml"
-  images_directory: "images"
-EOL
+# Copy sample adventure files
+cp -r sample-adventures/the-lost-forge-of-the-spellsmith $1/sample-adventures/
 
 # Copy update scripts to the scripts directory
 cp update_experiences.sh $1/scripts/update_experiences.sh
@@ -204,6 +195,9 @@ cp update_character_sheet.sh $1/scripts/update_character_sheet.sh
 
 # Make scripts executable
 chmod +x $1/scripts/*.sh
+
+# Generate manifest.yaml
+./generate_manifest.sh $1
 
 # Generate README.md
 ./generate_readme.sh $1
