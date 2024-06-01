@@ -188,6 +188,7 @@ cp update_experiences.sh $1/scripts/update_experiences.sh
 cp update_locations.sh $1/scripts/update_locations.sh
 cp update_people.sh $1/scripts/update_people.sh
 cp update_missions.sh $1/scripts/update_missions.sh
+cp update_character_sheet.sh $1/scripts/update_character_sheet.sh
 
 # Make scripts executable
 chmod +x $1/scripts/*.sh

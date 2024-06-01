@@ -29,19 +29,57 @@ This section holds structured data about Cindor's character sheet, experiences, 
    \`\`\`bash
    bash setup_structure.sh <directory_name>
    \`\`\`
-
-2. **Updating the Journal:**
-   - After each session, create a new markdown file in the \`journal\` directory.
-   - Add a summary of the session, include generated images, and note the experience gained.
-
-3. **Updating Technical Files:**
-   - Use the provided bash scripts to update the YAML files with new experiences, locations, people, and missions.
+2. **Start of Session Tasks**
+   - Find a strategy to prompt the AI to scan the repo in github to rehydrate our ongoing adventure where we left off
+3. **End of Session Tasks**
+    \`\`\`
+    Please generate the end-of-session updates based on the following information:
+    
+    a. **Journal Entry**:
+       - **Session Title:** [Insert Session Title Here]
+       - **Overview:** [Provide a brief summary of the session.]
+       - **Journey Log:** [Detailed account of the adventures and experiences.]
+       - **Notable Events:** [List key events]
+       - **Learnings and Reflections:** [Provide insights and reflections.]
+       - **Next Steps:** [Outline plans and objectives.]
+       - **Experience Gained:** Total experience points earned: [Insert Experience Points Here]
+       - **Images:** [Describe images to be included]
+    
+    b. **Character Sheet Update**:
+       - **Character Information:** [Provide updated character details]
+    
+    c. **Technical Files Update**:
+       - **Experiences:** [Provide new experiences]
+       - **Locations:** [Provide new locations]
+       - **People:** [Provide new people met]
+       - **Missions:** [Provide updates on missions]
+    
+    Thank you!
+    \`\`\`
 
 ## Adventure Narrative
 The narrative of the campaign, titled "The Lost Forge of the Spellsmith," is detailed below. This section captures the essence of the adventure, its key scenes, and the characters involved.
 
 ### Act 1: Rumors and Preparation
-...
+
+*Insert details of Act 1 here...*
+
+### Act 2: Journey to the Ruins
+
+*Insert details of Act 2 here...*
+
+### Act 3: Infiltration and Discovery
+
+*Insert details of Act 3 here...*
+
+### Act 4: The Forge and the Showdown
+
+*Insert details of Act 4 here...*
+
+### Act 5: Legacy and Future Adventures
+
+*Insert details of Act 5 here...*
+
 EOL
 
 echo "README.md generated successfully."
