@@ -183,6 +183,18 @@ tasks:
   - Incorporate session suggestions and feedback
 EOL
 
+# Create manifest file
+cat <<EOL > $1/manifest.yaml
+manifest:
+  journal_directory: "journal"
+  character_sheet: "technical/character_sheet.yaml"
+  experiences: "technical/experiences.yaml"
+  locations: "technical/locations.yaml"
+  people: "technical/people.yaml"
+  missions: "technical/missions.yaml"
+  images_directory: "images"
+EOL
+
 # Copy update scripts to the scripts directory
 cp update_experiences.sh $1/scripts/update_experiences.sh
 cp update_locations.sh $1/scripts/update_locations.sh

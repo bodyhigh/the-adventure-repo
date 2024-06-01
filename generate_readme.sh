@@ -30,7 +30,18 @@ This section holds structured data about Cindor's character sheet, experiences, 
    bash setup_structure.sh <directory_name>
    \`\`\`
 2. **Start of Session Tasks**
-   - Find a strategy to prompt the AI to scan the repo in github to rehydrate our ongoing adventure where we left off
+    \`\`\`
+    Please rehydrate our ongoing DnD adventure by scanning the repository using the \`manifest.yaml\` file to extract the current state. Follow these steps:
+    a. **Read the Latest Journal Entry**:
+        - Scan the directory listed under \`journal_directory\` in \`manifest.yaml\` for the latest markdown file to understand the most recent events.
+    b. **Update Character Sheet**:
+        - Read the file listed under \`character_sheet\` in \`manifest.yaml\` to get the current character stats and details.
+    c. **Update Technical Files**:
+        - Read the files listed under \`experiences\`, \`locations\`, \`people\`, and \`missions\` in \`manifest.yaml\` to understand the current state of the adventure.
+
+    Thank you!
+    \`\`\`
+
 3. **End of Session Tasks**
     \`\`\`
     Please generate the end-of-session updates based on the following information:
