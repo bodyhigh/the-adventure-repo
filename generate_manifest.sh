@@ -16,122 +16,103 @@ manifest:
   people: "technical/people.yaml"
   missions: "technical/missions.yaml"
   images_directory: "images"
-schemas:
-  character_sheet:
-    description: "Schema for character_sheet.yaml"
-    format:
-      character:
-        name: "String"
-        class: "String"
-        level: "Integer"
-        race: "String"
-        background: "String"
-        alignment: "String"
-        abilityScores:
-          strength: "Integer"
-          dexterity: "Integer"
-          constitution: "Integer"
-          intelligence: "Integer"
-          wisdom: "Integer"
-          charisma: "Integer"
-        modifiers:
-          strength: "Integer"
-          dexterity: "Integer"
-          constitution: "Integer"
-          intelligence: "Integer"
-          wisdom: "Integer"
-          charisma: "Integer"
-        savingThrows:
-          strength: "Integer"
-          dexterity: "Integer"
-          constitution: "Integer"
-          intelligence: "Integer"
-          wisdom: "Integer"
-          charisma: "Integer"
-        skills:
-          acrobatics: "Integer"
-          animalHandling: "Integer"
-          arcana: "Integer"
-          athletics: "Integer"
-          deception: "Integer"
-          history: "Integer"
-          insight: "Integer"
-          intimidation: "Integer"
-          investigation: "Integer"
-          medicine: "Integer"
-          nature: "Integer"
-          perception: "Integer"
-          performance: "Integer"
-          persuasion: "Integer"
-          religion: "Integer"
-          sleightOfHand: "Integer"
-          stealth: "Integer"
-          survival: "Integer"
-        proficiencyBonus: "Integer"
-        hitPoints: "Integer"
-        armorClass: "Integer"
-        initiative: "Integer"
-        speed: "Integer"
-        features:
-          race: "List of Strings"
-          class: "List of Strings"
-          background: "List of Strings"
-        spells:
-          cantrips: "List of Strings"
-          spellSlots:
-            1st: "Integer"
-            2nd: "Integer"
-            3rd: "Integer"
-            4th: "Integer"
-        equipment:
-          armor: "String"
-          weapons: "List of Strings"
-          shield: "String"
-          adventuringGear: "List of Strings"
-          magicalItems: "List of Strings"
-          miscellaneousItems: "List of Strings"
-          otherItems: "List of Strings"
-        proficienciesAndLanguages:
-          armor: "List of Strings"
-          weapons: "List of Strings"
-          tools: "List of Strings"
-          languages: "List of Strings"
-        spellcastingDetails:
-          spellcastingAbility: "String"
-          spellSaveDC: "Integer"
-          spellAttackBonus: "Integer"
-  experiences:
-    description: "Schema for experiences.yaml"
-    format:
-      sessions:
-        - session_id: "Integer"
-          date: "String (YYYY-MM-DD)"
-          title: "String"
-          description: "String"
-          events: "List of Strings"
-  locations:
-    description: "Schema for locations.yaml"
-    format:
-      locations:
-        - name: "String"
-          description: "String"
-  people:
-    description: "Schema for people.yaml"
-    format:
-      people:
-        - name: "String"
-          description: "String"
-  missions:
-    description: "Schema for missions.yaml"
-    format:
-      short_term:
-        - mission: "String"
-          status: "String"
-          objectives: "List of Strings"
-      long_term:
-        - mission: "String"
-          status: "String"
-          objectives: "List of Strings"
+  schemas:
+    character_sheet:
+      name: string
+      class: string
+      level: integer
+      race: string
+      background: string
+      alignment: string
+      abilityScores:
+        strength: integer
+        dexterity: integer
+        constitution: integer
+        intelligence: integer
+        wisdom: integer
+        charisma: integer
+      modifiers:
+        strength: integer
+        dexterity: integer
+        constitution: integer
+        intelligence: integer
+        wisdom: integer
+        charisma: integer
+      savingThrows:
+        strength: integer
+        dexterity: integer
+        constitution: integer
+        intelligence: integer
+        wisdom: integer
+        charisma: integer
+      skills:
+        acrobatics: integer
+        animalHandling: integer
+        arcana: integer
+        athletics: integer
+        deception: integer
+        history: integer
+        insight: integer
+        intimidation: integer
+        investigation: integer
+        medicine: integer
+        nature: integer
+        perception: integer
+        performance: integer
+        persuasion: integer
+        religion: integer
+        sleightOfHand: integer
+        stealth: integer
+        survival: integer
+      combat:
+        proficiencyBonus: integer
+        hitPoints: integer
+        armorClass: integer
+        initiative: integer
+        speed: integer
+        attacksAndSpellcasting:
+          - name: string
+            attackBonus: integer
+            damage: string
+      features:
+        race: list of strings
+        class: list of strings
+        background: list of strings
+      spellcasting:
+        spellcastingAbility: string
+        spellSaveDC: integer
+        spellAttackBonus: integer
+        cantrips: list of strings
+        spellSlots:
+          1st: integer
+          2nd: integer
+          3rd: integer
+          4th: integer
+        knownSpells: list of strings
+        availableSpells: list of objects with { name: string, chosen: boolean }
+      equipment:
+        armor: string
+        weapons: list of strings
+        shield: string
+        adventuringGear: list of strings
+        magicalItems: list of strings
+        miscellaneousItems: list of strings
+        otherItems: list of strings
+      proficienciesAndLanguages:
+        armor: list of strings
+        weapons: list of strings
+        tools: list of strings
+        languages: list of strings
+      personality:
+        traits: string
+        ideals: string
+        bonds: string
+        flaws: string
+      backstory: string
+      notableQuests: list of objects with { name: string, description: string }
+      passivePerception: integer
+      experiencePoints: integer
+      featuresAndTraitsDescription: list of objects with { name: string, description: string }
 EOL
 
-echo "manifest.yaml generated successfully."
+echo "Manifest file generated successfully."
