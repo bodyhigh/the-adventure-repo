@@ -6,29 +6,38 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+# Set up directory name
+DIR=$1
+
+# Check if the directory already exists to avoid recursion
+if [ -d "$DIR" ]; then
+  echo "Directory already exists. Exiting to avoid recursion."
+  exit 1
+fi
+
 # Create main directories
-mkdir -p $1/{journal,technical,images,persona,scripts,sample-adventures/the-lost-forge-of-the-spellsmith}
+mkdir -p $DIR/{journal,technical,images,persona,scripts,sample-adventures/the-lost-forge-of-the-spellsmith}
 
 # Create initial technical files with clean setup
-cat <<EOL > $1/technical/experiences.yaml
+cat <<EOL > $DIR/technical/experiences.yaml
 sessions: []
 EOL
 
-cat <<EOL > $1/technical/locations.yaml
+cat <<EOL > $DIR/technical/locations.yaml
 locations: []
 EOL
 
-cat <<EOL > $1/technical/people.yaml
+cat <<EOL > $DIR/technical/people.yaml
 people: []
 EOL
 
-cat <<EOL > $1/technical/missions.yaml
+cat <<EOL > $DIR/technical/missions.yaml
 short_term: []
 long_term: []
 EOL
 
 # Create persona file
-cat <<EOL > $1/persona/persona_file.yaml
+cat <<EOL > $DIR/persona/persona_file.yaml
 name: DM Persona
 style: Critical Role
 tasks:
@@ -41,7 +50,7 @@ tasks:
 EOL
 
 # Add sample adventure README and image
-cat <<EOL > $1/sample-adventures/the-lost-forge-of-the-spellsmith/README.md
+cat <<EOL > $DIR/sample-adventures/the-lost-forge-of-the-spellsmith/README.md
 # The Lost Forge of the Spellsmith
 ![The Lost Forge of the Spellsmith](cover.webp)
 
@@ -50,27 +59,27 @@ cat <<EOL > $1/sample-adventures/the-lost-forge-of-the-spellsmith/README.md
 EOL
 
 # Copy the cover image (assuming cover.webp is available in the same directory as this script)
-cp cover.webp $1/sample-adventures/the-lost-forge-of-the-spellsmith/
+cp cover.webp $DIR/sample-adventures/the-lost-forge-of-the-spellsmith/
 
 # Copy update scripts to the scripts directory
-cp update_experiences.sh $1/scripts/update_experiences.sh
-cp update_locations.sh $1/scripts/update_locations.sh
-cp update_people.sh $1/scripts/update_people.sh
-cp update_missions.sh $1/scripts/update_missions.sh
-cp update_character_sheet.sh $1/scripts/update_character_sheet.sh
-cp generate_manifest.sh $1/scripts/generate_manifest.sh
-cp create_character_sheet.sh $1/scripts/create_character_sheet.sh
+cp update_experiences.sh $DIR/scripts/update_experiences.sh
+cp update_locations.sh $DIR/scripts/update_locations.sh
+cp update_people.sh $DIR/scripts/update_people.sh
+cp update_missions.sh $DIR/scripts/update_missions.sh
+cp update_character_sheet.sh $DIR/scripts/update_character_sheet.sh
+cp generate_manifest.sh $DIR/scripts/generate_manifest.sh
+cp create_character_sheet.sh $DIR/scripts/create_character_sheet.sh
 
 # Make scripts executable
-chmod +x $1/scripts/*.sh
+chmod +x $DIR/scripts/*.sh
 
 # Generate README.md
-./generate_readme.sh $1
+bash $DIR/scripts/generate_readme.sh $DIR
 
 # Generate manifest file
-./generate_manifest.sh $1
+bash $DIR/scripts/generate_manifest.sh $DIR
 
 # Create character sheet
-./create_character_sheet.sh $1
+bash $DIR/scripts/create_character_sheet.sh $DIR
 
 echo "Setup completed and README.md generated successfully."

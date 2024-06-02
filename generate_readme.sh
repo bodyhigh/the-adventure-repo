@@ -6,8 +6,10 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+DIR=$1
+
 # Create README.md
-cat <<EOL > $1/README.md
+cat <<EOL > $DIR/README.md
 # DnD Adventure Journal
 
 ## Overview
@@ -68,7 +70,6 @@ This section holds structured data about Cindor's character sheet, experiences, 
        - Refer to the \`manifest.yaml\` file for schema hints and formatting guidelines.
     
     Thank you!
-    \`\`\`
 
     Please generate a bash script that performs the following tasks:
     - Creates a markdown file in the \`/journal\` folder with the filename format \`Session_[timestamp].md\`.
@@ -121,8 +122,4 @@ This section holds structured data about Cindor's character sheet, experiences, 
 ## Adventure Narrative
 The narrative of the campaign, titled "The Lost Forge of the Spellsmith," is detailed below. This adventure involves the quest to find an ancient forge of immense power, hidden within the ruins of an ancient city and guarded by a fanatical cult. The adventurers must gather knowledge and allies, face political tensions, navigate treacherous terrain, and overcome formidable foes to uncover the forge’s secrets.
 
-For the full adventure details, see the [The Lost Forge of the Spellsmith README](./sample-adventures/the-lost-forge-of-the-spellsmith/README.md).
-
-EOL
-
-echo "README.md generated successfully."
+For the full adventure details, see the [The Lost Forge of the Spellsmith README](./
